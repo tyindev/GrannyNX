@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: FreeDEV
+  companyName: DVLooper
   productName: Granny_psvita
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -341,7 +341,7 @@ PlayerSettings:
   cameraUsageDescription: 
   locationUsageDescription: 
   microphoneUsageDescription: 
-  switchNMETAOverride: 
+  switchNMETAOverride: Application.aarch64.lp64.nmeta
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144
   switchSocketAllocatorPoolSize: 128
@@ -349,9 +349,9 @@ PlayerSettings:
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
   switchUseGOLDLinker: 0
-  switchApplicationID: 0x01004b9000490000
+  switchApplicationID: 0xA240FC12CA450000
   switchNSODependencies: 
-  switchTitleNames_0: 
+  switchTitleNames_0: Granny
   switchTitleNames_1: 
   switchTitleNames_2: 
   switchTitleNames_3: 
@@ -366,7 +366,7 @@ PlayerSettings:
   switchTitleNames_12: 
   switchTitleNames_13: 
   switchTitleNames_14: 
-  switchPublisherNames_0: 
+  switchPublisherNames_0: DVLooper & TyDotCS
   switchPublisherNames_1: 
   switchPublisherNames_2: 
   switchPublisherNames_3: 
@@ -417,11 +417,11 @@ PlayerSettings:
   switchMainThreadStackSize: 1048576
   switchPresenceGroupId: 
   switchLogoHandling: 0
-  switchReleaseVersion: 0
+  switchReleaseVersion: 1
   switchDisplayVersion: 1.0.0
   switchStartupUserAccount: 0
   switchTouchScreenUsage: 0
-  switchSupportedLanguagesMask: 0
+  switchSupportedLanguagesMask: 1
   switchLogoType: 0
   switchApplicationErrorCodeCategory: 
   switchUserAccountSaveDataSize: 0

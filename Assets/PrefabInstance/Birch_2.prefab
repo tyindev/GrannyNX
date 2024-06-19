@@ -2,7 +2,6 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1001 &100100000
 Prefab:
-  m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
@@ -13,10 +12,9 @@ Prefab:
   m_IsPrefabAsset: 1
 --- !u!1 &1860491630945406
 GameObject:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
+  serializedVersion: 5
   m_Component:
   - component: {fileID: 4670366921184046}
   - component: {fileID: 33762049450045441}
@@ -30,7 +28,6 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4670366921184046
 Transform:
-  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860491630945406}
@@ -41,9 +38,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &33762049450045441
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860491630945406}
+  m_Mesh: {fileID: 4300000, guid: 08c1bbefba28a0f4c9c606feef0a9757, type: 2}
 --- !u!23 &23180009615297081
 MeshRenderer:
-  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860491630945406}
@@ -80,10 +82,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33762049450045441
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860491630945406}
-  m_Mesh: {fileID: 4300000, guid: 08c1bbefba28a0f4c9c606feef0a9757, type: 2}

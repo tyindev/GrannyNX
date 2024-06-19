@@ -2,3 +2,8 @@
 /Library
 /Library
 /Temp
+/SwitchIL2CPPCache
+/Library
+*.nsp
+*.nss
+/SwitchIL2CPPStats
