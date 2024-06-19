@@ -28,7 +28,7 @@ public class clickOptionButtonIG : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
-			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
+			if (touch.phase == TouchPhase.Ended)
 			{
 				Time.timeScale = 0f;
 				optionMenu.SetActive(true);

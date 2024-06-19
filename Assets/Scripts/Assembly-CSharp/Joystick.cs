@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
-[RequireComponent(typeof(GUITexture))]
+[RequireComponent(typeof(Image))]
 public class Joystick : MonoBehaviour
 {
 	private static Joystick[] joysticks;
@@ -33,7 +34,7 @@ public class Joystick : MonoBehaviour
 
 	private float firstDeltaTime;
 
-	private GUITexture gui;
+	private Image gui;
 
 	private Rect defaultRect;
 
@@ -45,7 +46,7 @@ public class Joystick : MonoBehaviour
 
 	public bool havestopped;
 
-	public GUITexture joystickRing;
+	public Image joystickRing;
 
 	public GameObject footstepScriptHolder;
 
@@ -69,10 +70,7 @@ public class Joystick : MonoBehaviour
 	public virtual void Start()
 	{
 		footstepScriptHolder = GameObject.Find("Main Camera");
-		gui = (GUITexture)GetComponent(typeof(GUITexture));
-		defaultRect = gui.pixelInset;
-		defaultRect.x += base.transform.position.x * (float)Screen.width;
-		defaultRect.y += base.transform.position.y * (float)Screen.height;
+		gui = (Image)GetComponent(typeof(Image));
 		float x = 0f;
 		Vector3 vector = base.transform.position;
 		vector.x = x;
@@ -86,28 +84,10 @@ public class Joystick : MonoBehaviour
 		defaultRect.x = 0.09f * (float)Screen.width;
 		defaultRect.y = 0.13f * (float)Screen.height;
 		float width = 0.13f * (float)Screen.width;
-		Rect pixelInset = joystickRing.pixelInset;
-		pixelInset.width = width;
-		joystickRing.pixelInset = pixelInset;
 		float width2 = defaultRect.width;
-		Rect pixelInset2 = joystickRing.pixelInset;
-		pixelInset2.height = width2;
-		joystickRing.pixelInset = pixelInset2;
-		float x2 = 0.09f * (float)Screen.width;
-		Rect pixelInset3 = joystickRing.pixelInset;
-		pixelInset3.x = x2;
-		joystickRing.pixelInset = pixelInset3;
-		float y2 = 0.13f * (float)Screen.height;
-		Rect pixelInset4 = joystickRing.pixelInset;
-		pixelInset4.y = y2;
-		joystickRing.pixelInset = pixelInset4;
 		if (touchPad)
 		{
-			if ((bool)gui.texture)
-			{
-				touchZone = defaultRect;
-			}
-			return;
+			touchZone = defaultRect;
 		}
 		guiTouchOffset.x = defaultRect.width * 0.5f;
 		guiTouchOffset.y = defaultRect.height * 0.5f;
@@ -132,7 +112,6 @@ public class Joystick : MonoBehaviour
 			havestopped = true;
 			((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 		}
-		gui.pixelInset = defaultRect;
 		lastFingerId = -1;
 		position = Vector2.zero;
 		fingerDownPos = Vector2.zero;
@@ -194,7 +173,7 @@ public class Joystick : MonoBehaviour
 						flag = true;
 					}
 				}
-				else if (gui.HitTest(touch.position))
+				else
 				{
 					flag = true;
 				}
@@ -244,13 +223,7 @@ public class Joystick : MonoBehaviour
 					{
 						((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).walk();
 						float x = Mathf.Clamp(vector.x, guiBoundary.min.x * 1.09f, guiBoundary.max.x * 1.09f);
-						Rect pixelInset = gui.pixelInset;
-						pixelInset.x = x;
-						gui.pixelInset = pixelInset;
 						float y = Mathf.Clamp(vector.y, guiBoundary.min.y, guiBoundary.max.y * 1.09f);
-						Rect pixelInset2 = gui.pixelInset;
-						pixelInset2.y = y;
-						gui.pixelInset = pixelInset2;
 					}
 					if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
 					{
@@ -261,8 +234,7 @@ public class Joystick : MonoBehaviour
 		}
 		if (!touchPad)
 		{
-			position.x = (gui.pixelInset.x + guiTouchOffset.x - guiCenter.x) / guiTouchOffset.x;
-			position.y = (gui.pixelInset.y + guiTouchOffset.y - guiCenter.y) / guiTouchOffset.y;
+			// nuh uh
 		}
 		float num = Mathf.Abs(position.x);
 		float num2 = Mathf.Abs(position.y);

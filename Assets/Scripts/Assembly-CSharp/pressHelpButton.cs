@@ -24,7 +24,7 @@ public class pressHelpButton : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
-			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
+			if (touch.phase == TouchPhase.Ended)
 			{
 				((soundEffectsMenu)ljudHolder.GetComponent(typeof(soundEffectsMenu))).buttonClick();
 				HelpMenu.SetActive(true);

@@ -63,7 +63,7 @@ public class endDay : MonoBehaviour
 
 	public GameObject carButton;
 
-	public GUITexture trapButtonGUI;
+	public Image trapButtonGUI;
 
 	public GameObject trapButton;
 

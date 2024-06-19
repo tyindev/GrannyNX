@@ -14,7 +14,7 @@ public class CountKeys : MonoBehaviour
 
 	public virtual void Update()
 	{
-		keyCounterParent.GetComponent<GUIText>().text = keys.ToString();
+		// wat5re
 	}
 
 	public virtual void countUpkeys()

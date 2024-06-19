@@ -25,22 +25,9 @@ public class ClickOptionButton : MonoBehaviour
 		if (Input.touchCount > 0)
 		{
 			Vector2 position = Input.GetTouch(0).position;
-			if (GetComponent<GUITexture>().HitTest(position))
-			{
-				buttonPressed = true;
-				base.transform.localPosition = new Vector3(-0.25f, -0.04f, 2f);
-				if (!buttonsounds)
-				{
-					buttonsounds = true;
-					((ButtonClicks)ljudHolder.GetComponent(typeof(ButtonClicks))).clickButton();
-				}
-			}
-			else
-			{
-				base.transform.localPosition = new Vector3(-0.28f, -0.04f, 2f);
-				buttonPressed = false;
-				buttonsounds = false;
-			}
+			base.transform.localPosition = new Vector3(-0.28f, -0.04f, 2f);
+			buttonPressed = false;
+			buttonsounds = false;
 		}
 		else if (buttonPressed)
 		{

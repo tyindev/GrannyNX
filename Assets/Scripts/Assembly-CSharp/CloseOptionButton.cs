@@ -28,7 +28,7 @@ public class CloseOptionButton : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
-			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
+			if (touch.phase == TouchPhase.Ended)
 			{
 				optionMenu.SetActive(false);
 				joystick.SetActive(true);

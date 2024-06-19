@@ -35,7 +35,7 @@ public class BackToMenu : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
-			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position) && !buttonClicked)
+			if (touch.phase == TouchPhase.Ended)
 			{
 				buttonClicked = true;
 				saveSensitivityData saveSensitivityData = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));

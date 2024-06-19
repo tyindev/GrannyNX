@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class tapcontrol : MonoBehaviour
@@ -8,7 +9,7 @@ public class tapcontrol : MonoBehaviour
 
 	public Transform cameraPivot;
 
-	public GUITexture jumpButton;
+	public Image jumpButton;
 
 	public float speed;
 
@@ -145,12 +146,12 @@ public class tapcontrol : MonoBehaviour
 		if (touchCount == 1 && state == ControlState.MovingCharacter)
 		{
 			Touch touch = Input.GetTouch(0);
-			if (character.isGrounded && jumpButton.HitTest(touch.position))
+			if (character.isGrounded)
 			{
 				velocity = character.velocity;
 				velocity.y = jumpSpeed;
 			}
-			else if (!jumpButton.HitTest(touch.position) && touch.phase != 0)
+			else if (touch.phase != 0)
 			{
 				Ray ray = cam.ScreenPointToRay(new Vector3(touch.position.x, touch.position.y));
 				if (Physics.Raycast(ray, out hitInfo))
